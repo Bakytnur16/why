@@ -5,5 +5,5 @@ from django.conf.urls import url
 urlpatterns = [
     path('',views.index,name='index'),
     path('main/',views.main,name='main'),
-
+    path('message/', views.message, name='message'),
 ]
