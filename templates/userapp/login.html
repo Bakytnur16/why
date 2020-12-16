@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport content=width=device-width, initial-scale=1">
+<style>
+body, html {
+	height: 100%;
+	font-family: Comic Sans MS;
+}
+
+* {
+	box-sizing: border-box;
+}
+.bg-img {
+	background-image: url("https://images.wallpaperscraft.ru/image/okean_priboj_pena_more_voda_117846_1920x1080.jpg");
+	min-height: 650px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+.container {
+	position: absolute;
+	margin: 150px;
+	max-width: 500px
+	padding: 16px;
+	width: 30%;
+	left:  25%;
+	right: 20%;
+	background-color: white;
+}
+form { margin: 0 auto; }
+input[type=text], input[type=password] {
+	width: 100%;
+	padding: 15px;
+	margin: 5px 0 22px 0;
+	border: none;
+	background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+	background-color: #ddd;
+	outline: none;
+}
+
+.btn {
+	backgound-color: #00bfff;
+	color: white;
+	padding: 16px 20px;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	opacity: 0.9;
+}
+.btn:hover {
+	opacity: 1;
+}
+</style>
+</head>
+<body>
+<div class="bg-img">
+  <form action="/userapp/login" method="post" class="container" style="text-align: center;font-family:Comic Sans MS">
+                {% csrf_token %}
+    <h1 style="text-align:center;line-height:30px;font-size:450%;font-family:Comic Sans MS;">Q&A</h1>
+
+    <label for="Login"><b>Username</b></label>
+    <input type="text" placeholder="Enter Your Username" name="Username" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
+
+    <button style="background-color: #004d66" type="submit" class="btn">OK</button>
+    <a style="color: #000000" href="https://www.wikihow.com/Remember-a-Forgotten-Password"> <i>I forgot my password</i></a><br>
+  </form>
+</div>
+</body>
+</html>

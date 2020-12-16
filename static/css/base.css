@@ -1,0 +1,49 @@
+
+    body{
+    height:100%;
+    margin:0px;
+    padding:0px;
+    }
+    nav{
+    position:fixed;
+    top:0px;
+    left:0px;
+    right:0px;
+    padding:1% 20%;
+    text-align:center;
+    background-color:white;
+    width:1300px;
+    float: left;
+     
+    }
+    .profile{
+    float:right;
+    width:11.11%;
+    height:100%;
+    position:relative;
+    top:10%;
+    }
+    .logo{
+    float:left;
+    width:10%;
+    height:100%;
+    line-height:100%;
+    position:relative;
+    top:10%;
+    }
+    #content{
+    height:100%;
+    overflow:hidden;
+    }
+    .cols1{
+    float:left;
+    width:15%;
+    height:100%;
+    padding:0% 5%;
+    position:relative;
+    top:10%;
+    text-align:center;
+    }
+    a{
+    text-decoration:none;
+    }
