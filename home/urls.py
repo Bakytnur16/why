@@ -4,5 +4,6 @@ from django.conf.urls import url
 
 urlpatterns = [
     path('',views.index,name='index'),
-    #url(r'^category/(\d+)/$',views.category,name='category')
+    path('main/',views.main,name='main'),
+
 ]

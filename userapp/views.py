@@ -2,7 +2,8 @@
 
 from django.shortcuts import render, redirect
 from django.urls import reverse
-from django.contrib.auth.models import User,auth
+from django.contrib.auth.models import User
+from django.contrib import auth
 from django.contrib import messages
 from django.db import models
 from django.http import HttpResponse
@@ -21,19 +22,25 @@ def register(request):
             userapp = Register(username = uname, password = pwd, email=uemail)
 
             userapp.save()
-            return HttpResponse('yes')
-        return HttpResponse('yes')
+            return render(request,'home/main.html')
+        return HttpResponse('Wrong')
 
 def login(request):
+    if request.method == 'GET':
+        return render(request,'userapp/login.html')
+
     if request.method == 'POST':
-        uname = request.POST['uname']
-        pwd = request.POST['pwd']
-        user = auth.authenticate(username = uname, password = pwd)
-        if user is not None:
-            auth.login(request, user)
-            return HttpResponse('yes')
-        else:
-            return HttpResponse('no')
+        uname = request.POST.get('uname')
+        pwd = request.POST.get('pwd')
+        next_url = request.POST.get('next_url')
+        if username == 'aaa' and password == '123':
+            if next_url and next_url != 'logout':
+                response = redirect(next_url)
+            else:
+                response = redirect('/index/')
+      #  userapp = auth.authenticate(username = uname, password = pwd)
+        return HttpResponse('yes1')
+    return HttpResponse('no')
 
 def logout(request):
     if request.method == 'GET':

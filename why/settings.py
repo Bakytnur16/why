@@ -126,7 +126,7 @@ STATICFILES_DIRS = (
     STATIC_PATH,
     )
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '#/main'
 APPEND_SLASH = False
 #AUTH_USER_MODEL = "userapp.User"
 import os
